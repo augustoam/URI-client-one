@@ -4,7 +4,7 @@ class TimeController < ActionController::API
   end
 
   def set_time
-    debugger
+    # debugger
     Timer.create!(time: params[:time])
     render json: :ok, status: :ok
   end
