@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   root 'home#index'
-  
+
   resources :time do
     post :publish_time_mqtt, on: :collection
+    get :get_time, on: :collection
   end
 
   require 'sidekiq/web'

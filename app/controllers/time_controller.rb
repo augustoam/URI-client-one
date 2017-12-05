@@ -6,6 +6,10 @@ class TimeController < ActionController::API
   end
 
   def get_time
-    Timer.last
+    if Timer.any?
+      render json: Timer.last.time
+    else
+      render json: Time.now
+    end
   end
 end
